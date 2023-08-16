@@ -5,6 +5,9 @@
   background-color: green; /* Змінюємо колір фону на зелений */
   color: white; /* Змінюємо колір тексту на білий */
 }
+.u-product-title-link span {
+  font-weight: 600;
+}
 .u-text-21 {
   color: red;
   display: flex;

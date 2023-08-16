@@ -65,10 +65,10 @@
               </colgroup>
               <thead class="u-grey-10 u-table-header u-table-header-1">
                 <tr style="height: 25px;">
-                  <th class="u-border-1 u-border-grey-15 u-table-cell">Product </th>
-                  <th class="u-border-1 u-border-grey-15 u-table-cell">Price </th>
-                  <th class="u-border-1 u-border-grey-15 u-table-cell">Quantity </th>
-                  <th class="u-border-1 u-border-grey-15 u-table-cell">Subtotal </th>
+                  <th class="u-border-1 u-border-grey-15 u-table-cell">Продукт</th>
+                  <th class="u-border-1 u-border-grey-15 u-table-cell">Ціна</th>
+                  <th class="u-border-1 u-border-grey-15 u-table-cell">Кількість</th>
+                  <th class="u-border-1 u-border-grey-15 u-table-cell">Вартість</th>
                 </tr>
               </thead>
               <tbody class="u-align-left u-table-alt-grey-5 u-table-body">
@@ -81,7 +81,7 @@
 </g></svg></span>
                     <img class="u-cart-product-image u-image u-image-round u-product-control u-radius-17 u-image-1" src="images/55410cffe19204df11d5576967d8be38fdd2f667f22bb056c50120234007a39557e9e674821836788552fd267d1fa119dc92cf27960ea51ab563fc_1280.jpg" data-image-width="1280" data-image-height="853">
                     <h2 class="u-cart-product-title u-product-control u-text u-text-1">
-                      <a class="u-product-title-link" href="#">Молоко</a>
+                      <a class="u-product-title-link" href="#">Молоко<span> <br>1л</span></a>
                     </h2>
                   </td>
                   <td class="u-border-1 u-border-grey-15 u-table-cell">
@@ -99,7 +99,8 @@
                         <a class="disabled minus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
                         </a>
-                        <input class="u-input quantity-input" type="text" value="0" pattern="[0-9]+">
+                        <input class="u-input quantity-input" type="number" placeholder="0" value="0" min="0" step="1">
+
 
                         <a class="plus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8 M 8 4 v 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
@@ -125,14 +126,14 @@
 </g></svg></span>
                     <img class="u-cart-product-image u-image u-image-round u-product-control u-radius-17 u-image-2" src="images/0ce3c55e2e5b2231ebc952a492ea585c2dda2c597e7ec19cef2c1d3497a818b38863fe798481e5e8b76fc9bb6251d42075db474213730ef4aa5460_1280.jpg" data-image-width="1280" data-image-height="855">
                     <h2 class="u-cart-product-title u-product-control u-text u-text-2">
-                      <a class="u-product-title-link" href="#">Творог</a>
+                      <a class="u-product-title-link" href="#">Творог<span> <br>1кг</span></a>
                     </h2>
                   </td>
                   <td class="u-border-1 u-border-grey-15 u-table-cell">
                     <div class="u-cart-product-price u-product-control u-product-price">
                       <div class="u-price-wrapper">
                         <div class="u-hide-price u-old-price"></div>
-                        <div class="u-price" style="font-weight: 700; font-size: 1rem;">150.00 грн</div>
+                        <div class="u-price" style="font-weight: 700; font-size: 1rem;">100.00 грн</div>
                       </div>
                     </div>
                   </td>
@@ -143,51 +144,8 @@
                         <a class="disabled minus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
                         </a>
-                        <input class="u-input quantity-input" type="text" value="0" pattern="[0-9]+">
+                        <input class="u-input quantity-input" type="number" placeholder="0" value="0" min="0" step="1">
 
-                        <a class="plus u-button-style u-hidden u-quantity-button">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8 M 8 4 v 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="u-border-1 u-border-grey-15 u-table-cell">
-                    <div class="u-cart-product-subtotal u-product-control u-product-price">
-                      <div class="u-price-wrapper">
-                        <div class="u-hide-price u-old-price"></div>
-                        <div class="u-price" style="font-weight: 400;">245.00 грн</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr  class="product-row" style="height: 121px;">
-                  <td class="u-border-1 u-border-grey-15 u-table-cell"><span class="u-cart-remove-item u-hidden u-icon u-icon-3"><svg class="u-svg-content" viewBox="0 0 52 52" x="0px" y="0px" style="width: 1em; height: 1em;"><g><path d="M26,0C11.664,0,0,11.663,0,26s11.664,26,26,26s26-11.663,26-26S40.336,0,26,0z M26,50C12.767,50,2,39.233,2,26
-		S12.767,2,26,2s24,10.767,24,24S39.233,50,26,50z"></path><path d="M35.707,16.293c-0.391-0.391-1.023-0.391-1.414,0L26,24.586l-8.293-8.293c-0.391-0.391-1.023-0.391-1.414,0
-		s-0.391,1.023,0,1.414L24.586,26l-8.293,8.293c-0.391,0.391-0.391,1.023,0,1.414C16.488,35.902,16.744,36,17,36
-		s0.512-0.098,0.707-0.293L26,27.414l8.293,8.293C34.488,35.902,34.744,36,35,36s0.512-0.098,0.707-0.293
-		c0.391-0.391,0.391-1.023,0-1.414L27.414,26l8.293-8.293C36.098,17.316,36.098,16.684,35.707,16.293z"></path>
-</g></svg></span>
-                    <img class="u-cart-product-image u-image u-image-round u-product-control u-radius-17 u-image-2" src="images/0dd17cbe01077d8dae2adba37015215ccf078f3be8bab827d91176d71fc2953e379865595b6f2367f4a8d7efde4c02927fe2e8fb3d4f3d1a764287_1280.jpg" data-image-width="1280" data-image-height="855">
-                    <h2 class="u-cart-product-title u-product-control u-text u-text-2">
-                      <a class="u-product-title-link" href="#">Вершки</a>
-                    </h2>
-                  </td>
-                  <td class="u-border-1 u-border-grey-15 u-table-cell">
-                    <div class="u-cart-product-price u-product-control u-product-price">
-                      <div class="u-price-wrapper">
-                        <div class="u-hide-price u-old-price"></div>
-                        <div class="u-price" style="font-weight: 700; font-size: 1rem;">50.00 грн</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="u-border-1 u-border-grey-15 u-table-cell">
-                    <div class="u-cart-product-quantity u-product-control u-product-quantity u-product-quantity-2">
-                      <div class="u-hidden u-quantity-label"> Quantity </div>
-                      <div class="u-border-1 u-border-grey-25 u-quantity-input u-radius-5">
-                        <a class="disabled minus u-button-style u-hidden u-quantity-button">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
-                        </a>
-                        <input class="u-input quantity-input" type="text" value="0" pattern="[0-9]+">
 
                         <a class="plus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8 M 8 4 v 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
@@ -213,14 +171,14 @@
 </g></svg></span>
                     <img class="u-cart-product-image u-image u-image-round u-product-control u-radius-17 u-image-2" src="images/51ce1b1c7a55911d7afc05429598473bbcaf1b43679a829f52704bdc73d1464c58bf55519c34c2f8f7a922af57cfc44d7e8f979480b2ca0555f43f_1280.jpg" data-image-width="1280" data-image-height="855">
                     <h2 class="u-cart-product-title u-product-control u-text u-text-2">
-                      <a class="u-product-title-link" href="#">Сир</a>
+                      <a class="u-product-title-link" href="#">Сир<span> <br>1кг</span></a>
                     </h2>
                   </td>
                   <td class="u-border-1 u-border-grey-15 u-table-cell">
                     <div class="u-cart-product-price u-product-control u-product-price">
                       <div class="u-price-wrapper">
                         <div class="u-hide-price u-old-price"></div>
-                        <div class="u-price" style="font-weight: 700; font-size: 1rem;">150.00 грн</div>
+                        <div class="u-price" style="font-weight: 700; font-size: 1rem;">200.00 грн</div>
                       </div>
                     </div>
                   </td>
@@ -231,7 +189,8 @@
                         <a class="disabled minus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
                         </a>
-                        <input class="u-input quantity-input" type="text" value="0" pattern="[0-9]+">
+                        <input class="u-input quantity-input" type="number" placeholder="0" value="0" min="0" step="1">
+
 
                         <a class="plus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8 M 8 4 v 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
@@ -257,14 +216,14 @@
 </g></svg></span>
                     <img class="u-cart-product-image u-image u-image-round u-product-control u-radius-17 u-image-2" src="images/e13888f7bc16ed800a57251fa65c9534c0868ee930b273db13dd7aa96508f558c810100b3b24973928ce4273a19e55937b50cc52a19307780a6d37_1280.jpg" data-image-width="1280" data-image-height="855">
                     <h2 class="u-cart-product-title u-product-control u-text u-text-2">
-                      <a class="u-product-title-link" href="#">Сметана</a>
+                      <a class="u-product-title-link" href="#">Вершки<span> <br>0.5л</span></a>
                     </h2>
                   </td>
                   <td class="u-border-1 u-border-grey-15 u-table-cell">
                     <div class="u-cart-product-price u-product-control u-product-price">
                       <div class="u-price-wrapper">
                         <div class="u-hide-price u-old-price"></div>
-                        <div class="u-price" style="font-weight: 700; font-size: 1rem;">120.00 грн</div>
+                        <div class="u-price" style="font-weight: 700; font-size: 1rem;">40.00 грн</div>
                       </div>
                     </div>
                   </td>
@@ -275,7 +234,8 @@
                         <a class="disabled minus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
                         </a>
-                        <input class="u-input quantity-input" type="text" value="0" pattern="[0-9]+">
+                        <input class="u-input quantity-input" type="number" placeholder="0" value="0" min="0" step="1">
+
 
                         <a class="plus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8 M 8 4 v 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
@@ -301,14 +261,14 @@
 </g></svg></span>
                     <img class="u-cart-product-image u-image u-image-round u-product-control u-radius-17 u-image-3" src="images/2931e76a49138af214f264fe1b61851d15230dadeb8d49af890aef606f0698d51616306e4cbf3fe6d2dfaaf15582b356432d2f893c0f04f0bff042_1280.jpg" data-image-width="1280" data-image-height="833">
                     <h2 class="u-cart-product-title u-product-control u-text u-text-3">
-                      <a class="u-product-title-link" href="#">Масло</a>
+                      <a class="u-product-title-link" href="#">Масло<span> <br>200г</span></a>
                     </h2>
                   </td>
                   <td class="u-border-1 u-border-grey-15 u-table-cell">
                     <div class="u-cart-product-price u-product-control u-product-price">
                       <div class="u-price-wrapper">
                         <div class="u-hide-price u-old-price"></div>
-                        <div class="u-price" style="font-weight: 700; font-size: 1rem;">190.00</div>
+                        <div class="u-price" style="font-weight: 700; font-size: 1rem;">60.00</div>
                       </div>
                     </div>
                   </td>
@@ -319,7 +279,8 @@
                         <a class="disabled minus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
                         </a>
-                        <input class="u-input quantity-input" type="text" value="0" pattern="[0-9]+">
+                        <input class="u-input quantity-input" type="number" placeholder="0" value="0" min="0" step="1">
+
 
                         <a class="plus u-button-style u-hidden u-quantity-button">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m 4 8 h 8 M 8 4 v 8" fill="none" stroke="currentColor" stroke-width="1" fill-rule="evenodd"></path></svg>
@@ -382,7 +343,7 @@
                       <tbody class="u-align-right u-grey-5 u-table-body u-table-body-2">
                         <tr style="height: 46px;">
                           <td class="u-align-left u-border-1 u-border-grey-15 u-first-column u-table-cell u-table-cell-19">Сума</td>
-                          <td class="u-border-1 u-border-grey-15 u-table-cell u-table-cell-20" id="totalAmount">$281.00</td>
+                          <td class="u-border-1 u-border-grey-15 u-table-cell u-table-cell-20" id="totalAmount">0.00 грн</td>
                         </tr>
                       </tbody>
                     </table>

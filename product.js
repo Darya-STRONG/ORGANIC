@@ -1,19 +1,21 @@
+// Отримуємо всі поля вводу кількості товару
 const quantityInputs = document.querySelectorAll('.quantity-input');
 
-// Встановлюємо початкове значення для всіх полів вводу
+// Встановлюємо початкове значення для всіх полів вводу та атрибут placeholder
 quantityInputs.forEach(input => {
-  input.value = "0";
+  input.value = ""; // Залишаємо пустим, щоб при завантаженні було видно placeholder
 
   // Слідкуємо за змінами в полі вводу
   input.addEventListener('input', () => {
     const currentValue = parseInt(input.value);
     
-    // Відновлюємо значення до 0, якщо введено від'ємне або нульове значення
-    if (currentValue <= 0 || isNaN(currentValue)) {
-      input.value = "0";
+    // Відновлюємо значення до пустого рядка тільки якщо введено 0
+    if (currentValue === 0) {
+      input.value = "";
     }
   });
 });
+
 
 // Отримуємо всі рядки з товарами
 const productRows = document.querySelectorAll('.product-row');
@@ -29,25 +31,53 @@ function calculateSubtotal(row) {
 
   const price = parseFloat(priceElement.textContent);
   const quantity = parseInt(quantityInput.value);
-  const subtotal = price * quantity;
-
-  subtotalElement.textContent = subtotal.toFixed(2) + ' грн';
-
-  // Оновлюємо загальну суму
-  totalAmount += subtotal;
-  totalAmountElement.textContent = totalAmount.toFixed(2) + ' грн';
+  
+  // Перевірка, чи введене значення в quantityInput є числом або не пусте
+  if (!isNaN(quantity) && quantityInput.value !== "") {
+    const subtotal = price * quantity;
+    subtotalElement.textContent = subtotal.toFixed(2) + ' грн';
+    updateTotalAmount(); // Оновлюємо загальну суму
+  } else {
+    subtotalElement.textContent = '0.00 грн'; // Якщо введено нечислове значення або пусто
+    updateTotalAmount(); // Оновлюємо загальну суму
+  }
 }
+
+
 
 // Додаємо обробник події для кожної карточки товару
 productRows.forEach(row => {
   const quantityInput = row.querySelector('.u-quantity-input input');
   quantityInput.addEventListener('input', () => {
     calculateSubtotal(row);
+    updateTotalAmount(); // Оновлюємо загальну суму
+
   });
 
   // Викликаємо функцію для першого розрахунку підсумку
   calculateSubtotal(row);
 });
+
+// Функція для оновлення загальної суми
+function updateTotalAmount() {
+  totalAmount = 0; // Обнулюємо загальну суму
+
+  // Проходимось по всім рядкам з товарами та додаємо до загальної суми
+  productRows.forEach(row => {
+    const quantityInput = row.querySelector('.u-quantity-input input');
+    const quantity = parseInt(quantityInput.value);
+    const price = parseFloat(row.querySelector('.u-price').textContent);
+    
+    if (!isNaN(quantity)) {
+      totalAmount += price * quantity;
+    }
+  });
+
+  totalAmountElement.textContent = totalAmount.toFixed(2) + ' грн';
+}
+
+
+
 
 const updateCartButton = document.getElementById('updateCartButton');
 const nameInput = document.getElementById('name-2546');
@@ -57,7 +87,7 @@ updateCartButton.addEventListener('click', () => {
   // Скидуємо дані на кожній карточці
   productRows.forEach(row => {
     const quantityInput = row.querySelector('.u-quantity-input input');
-    quantityInput.value = "0"; // Встановлюємо початкове значення
+    quantityInput.value = ""; // Встановлюємо початкове значення
     calculateSubtotal(row); // Розраховуємо підсумок
   });
 
@@ -129,18 +159,20 @@ sendOrderButton.addEventListener('click', () => {
   phoneInput.value = '';
 });
 
-// Решта вашого коду залишається без змін
-
 function generateOrderText() {
   const productRows = document.querySelectorAll('.product-row');
-  let orderText = "Замовлення:\n";
+  let orderText = "Замовлення😉:\n";
 
   productRows.forEach(row => {
     const productName = row.querySelector('.u-cart-product-title a').textContent;
-    const quantity = parseInt(row.querySelector('.u-quantity-input input').value);
+    const quantityInput = row.querySelector('.u-quantity-input input');
+    const quantity = parseInt(quantityInput.value);
     const subtotal = row.querySelector('.u-cart-product-subtotal .u-price').textContent;
 
-    orderText += `${productName}: ${quantity} шт. (${subtotal})\n`;
+    // Перевіряємо, чи quantity є NaN і замінюємо його на 0
+    const quantityToShow = isNaN(quantity) ? 0 : quantity;
+
+    orderText += `✅${productName}: ${quantityToShow} шт. (${subtotal})\n`;
   });
 
   // Отримуємо дані замовника
@@ -148,10 +180,9 @@ function generateOrderText() {
   const customerPhone = document.getElementById('phone-2546').value;
 
   // Додаємо дані замовника до тексту замовлення
-  orderText += `\nДані замовника:\nІм'я та Прізвище: ${customerName}\nТелефон: ${customerPhone}`;
+  orderText += `\n🙍🙍‍♀️Дані замовника:\nІм'я та Прізвище: ${customerName}\nТелефон: ${customerPhone}`;
 
-  orderText += `\nЗагальна сума: ${totalAmount.toFixed(2)} грн`;
+  orderText += `\n\n💸Загальна сума: ${totalAmount.toFixed(2)} грн`;
 
   return orderText;
 }
-
